@@ -20,7 +20,7 @@ mongoose.connect(MONGO_URI)
     .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7860;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
