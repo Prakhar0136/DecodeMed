@@ -14,7 +14,6 @@ import {
   CheckCircle,
   HelpCircle,
   TrendingUp,
-  ShieldCheck,
   Lock,
   Download,
 } from "lucide-react";
@@ -42,7 +41,7 @@ export default function App() {
   useEffect(() => {
     const loadData = async () => {
       if (!userId) return;
-      
+
       try {
         const res = await fetch(`${API_BASE_URL}/api/records/trends/${userId}`);
         const result = await res.json();
@@ -112,7 +111,7 @@ export default function App() {
       .filter((d) => d[selectedBiomarker] !== null);
   };
 
-  // NEW FEATURE: Generate and download a CSV of all historical lab data
+  // Generate and download a CSV of all historical lab data
   const downloadCSV = () => {
     if (timeline.length === 0) return;
 
@@ -122,7 +121,6 @@ export default function App() {
     timeline.forEach((record) => {
       const date = new Date(record.recordDate).toLocaleDateString();
       record.biomarkers.forEach((b) => {
-        // Enclose text in quotes to prevent comma-separation issues
         csvContent += `"${date}","${b.name}","${b.value}","${b.unit}","${b.status}"\n`;
       });
     });
@@ -147,9 +145,6 @@ export default function App() {
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-2 text-xs font-medium bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200">
-              <ShieldCheck className="h-4 w-4" /> Privacy Shield Active
-            </div>
             <SignedIn>
               <UserButton />
             </SignedIn>
@@ -225,7 +220,6 @@ export default function App() {
                       {latestAnalysis.explanation}
                     </p>
                   </div>
-                  {/* CSV Download Button */}
                   <button
                     onClick={downloadCSV}
                     className="flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-sm transition whitespace-nowrap"

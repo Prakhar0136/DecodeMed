@@ -134,4 +134,4 @@ app.get('/api/records/trends/:userId', async (req, res) => {
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => console.log(`[🚀 Orchestrator] Running on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`DecodeMed Running on http://localhost:${PORT}`));

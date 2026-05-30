@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "DecodeMed",
   "version": "1.0.0",
   "description": "Smart Medical Report Interpreter Backend",
   "main": "server.js",
