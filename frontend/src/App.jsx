@@ -141,7 +141,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <Activity className="h-6 w-6 text-indigo-600 animate-pulse" />
             <h1 className="text-xl font-bold tracking-tight text-slate-900">
-              Smart Medical Interpreter
+              DecodeMed
             </h1>
           </div>
           <div className="flex items-center gap-4">
